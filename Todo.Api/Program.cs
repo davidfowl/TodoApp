@@ -23,7 +23,7 @@ builder.Services.AddSqlite<TodoDbContext>(connectionString);
 builder.Services.AddCurrentUser();
 
 // Configure Open API
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options => options.AddBearerTokenAuthentication());
 
 // Configure rate limiting
 builder.Services.AddRateLimiting();
@@ -47,6 +47,7 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference(options =>
     {
         options.Servers = [];
+        options.Authentication = new() { PreferredSecurityScheme = IdentityConstants.BearerScheme };
     });
 }
 
