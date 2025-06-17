@@ -1,4 +1,4 @@
-mithun is grt
+mithun is grter than yesterday
 
 ## Todo application with ASP.NET Core
 
