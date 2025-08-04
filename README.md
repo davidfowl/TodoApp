@@ -132,3 +132,5 @@ Learn more about the Auth0 .NET SDK [here](https://github.com/auth0/auth0-aspnet
 
 This app uses OpenTelemetry to collect logs, metrics and spans. You can see this
 using the [Aspire Dashboard](https://aspiredashboard.com/).
+
+#### Need additional details for Web assembly part
