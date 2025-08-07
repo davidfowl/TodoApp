@@ -51,7 +51,7 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference(options =>
     {
         options.Servers = [];
-        options.Authentication = new() { PreferredSecurityScheme = IdentityConstants.BearerScheme };
+        options.Authentication = new() { PreferredSecuritySchemes = [IdentityConstants.BearerScheme] };
     });
 }
 
