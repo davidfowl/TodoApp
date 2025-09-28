@@ -22,16 +22,16 @@ It showcases:
 
 ## Prerequisites
 
-### .NET
 1. [Install .NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
+2. [Aspire CLI](https://learn.microsoft.com/en-us/dotnet/aspire/cli/install)
 
 ### Database
 
-The application uses SQLite and entity framework. .NET Aspire is used to bootstrap all dependencies.
+The application uses SQLite and entity framework. Aspire is used to bootstrap all dependencies.
 
 ### Running the application
 
-To run the application, run the [TodoApp.AppHost](TodoApp.AppHost) project. This uses .NET Aspire to run both the [Todo.Web/Server](Todo.Web/Server) and [Todo.Api](Todo.Api).
+To run the application, run the [TodoApp.AppHost](TodoApp.AppHost) project. This uses Aspire to run both the [Todo.Web/Server](Todo.Web/Server) and [Todo.Api](Todo.Api).
 
 ## Optional
 
