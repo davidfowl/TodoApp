@@ -1,7 +1,7 @@
 @TodoApi_HostAddress = http://localhost:5000
 
 ### Create a user
-@password = tesdtpas@R4sword
+@password = testpas@R4sword
 @email = "joelakagza@gmail.com"
 
 POST {{TodoApi_HostAddress}}/users/register
