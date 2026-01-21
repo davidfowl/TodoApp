@@ -1,13 +1,14 @@
 @TodoApi_HostAddress = http://localhost:5000
 
 ### Create a user
-@password = <put a password here>
+@password = testpas@R4sword
+@email = "joelakagza@gmail.com"
 
 POST {{TodoApi_HostAddress}}/users/register
 Content-Type: application/json
 
 {
-    "email": "myuser@contoso.com",
+    "email": "{{email}}",
     "password": "{{password}}"
 }
 
@@ -17,7 +18,7 @@ POST {{TodoApi_HostAddress}}/users/login
 Content-Type: application/json
 
 {
-    "email": "myuser@contoso.com",
+    "email": "{{email}}",
     "password": "{{password}}"
 }
 

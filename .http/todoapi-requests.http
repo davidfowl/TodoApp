@@ -1,0 +1,213 @@
+@baseUrl = https://localhost:5001
+@token = your_access_token_here
+
+###############################################
+# USER MANAGEMENT
+###############################################
+
+### Register a new user
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "Password123!"
+}
+
+### Login
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "Password123!"
+}
+
+### Login with cookies
+POST {{baseUrl}}/users/login?useCookies=true
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "Password123!"
+}
+
+### Login with 2FA
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "Password123!",
+  "twoFactorCode": "123456"
+}
+
+### Refresh token
+POST {{baseUrl}}/users/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "your_refresh_token_here"
+}
+
+### Confirm email
+GET {{baseUrl}}/users/confirmEmail?userId=user_id_here&code=confirmation_code_here
+
+### Resend confirmation email
+POST {{baseUrl}}/users/resendConfirmationEmail
+Content-Type: application/json
+
+{
+  "email": "user@example.com"
+}
+
+### Forgot password
+POST {{baseUrl}}/users/forgotPassword
+Content-Type: application/json
+
+{
+  "email": "user@example.com"
+}
+
+### Reset password
+POST {{baseUrl}}/users/resetPassword
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "resetCode": "reset_code_here",
+  "newPassword": "NewPassword123!"
+}
+
+### Get user info (requires authentication)
+GET {{baseUrl}}/users/manage/info
+Authorization: Bearer {{token}}
+
+### Update user info (requires authentication)
+POST {{baseUrl}}/users/manage/info
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "newEmail": "newemail@example.com",
+  "newPassword": "NewPassword123!",
+  "oldPassword": "Password123!"
+}
+
+### Enable/Disable 2FA (requires authentication)
+POST {{baseUrl}}/users/manage/2fa
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "enable": true,
+  "twoFactorCode": "123456",
+  "resetSharedKey": false,
+  "resetRecoveryCodes": false,
+  "forgetMachine": false
+}
+
+### External provider token
+POST {{baseUrl}}/users/token/google
+Content-Type: application/json
+
+{
+  "username": "user@example.com",
+  "providerKey": "google_provider_key_here"
+}
+
+###############################################
+# TODO ITEMS
+###############################################
+
+### Get all todos (requires authentication)
+GET {{baseUrl}}/todos
+Authorization: Bearer {{token}}
+
+### Create a new todo (requires authentication)
+POST {{baseUrl}}/todos
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Buy groceries",
+  "isComplete": false
+}
+
+### Get a specific todo by ID (requires authentication)
+GET {{baseUrl}}/todos/1
+Authorization: Bearer {{token}}
+
+### Update a todo (requires authentication)
+PUT {{baseUrl}}/todos/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Buy groceries - Updated",
+  "isComplete": true
+}
+
+### Delete a todo (requires authentication)
+DELETE {{baseUrl}}/todos/1
+Authorization: Bearer {{token}}
+
+###############################################
+# SAMPLE WORKFLOW
+###############################################
+
+### 1. Register a new user
+# @name register
+POST {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "Test123!"
+}
+
+### 2. Login to get access token
+# @name login
+POST {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "Test123!"
+}
+
+### 3. Extract token from login response
+@authToken = {{login.response.body.accessToken}}
+
+### 4. Get all todos with the token
+GET {{baseUrl}}/todos
+Authorization: Bearer {{authToken}}
+
+### 5. Create a todo
+# @name createTodo
+POST {{baseUrl}}/todos
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "title": "Complete project documentation",
+  "isComplete": false
+}
+
+### 6. Update the created todo
+@todoId = {{createTodo.response.body.id}}
+
+PUT {{baseUrl}}/todos/{{todoId}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "id": {{todoId}},
+  "title": "Complete project documentation",
+  "isComplete": true
+}
+
+### 7. Delete the todo
+DELETE {{baseUrl}}/todos/{{todoId}}
+Authorization: Bearer {{authToken}}
