@@ -4,7 +4,7 @@
 
 This is a Todo application that features:
 - [**Todo.Web**](Todo.Web) - An ASP.NET Core hosted Blazor WASM front end application
-- [**Todo.Api**](Todo.Api) - An ASP.NET Core REST API backend using minimal APIs
+- [**Todo.Api**](Todo.Api) - An ASP.NET Cohjhvjhre REST API backend using minimal APIs
 
 ![image](https://user-images.githubusercontent.com/95136/204161352-bc54ccb7-32cf-49ba-a6f7-f46d0f2d204f.png)
 
@@ -99,7 +99,7 @@ Or using user secrets:
 
 ```
 dotnet user-secrets set Authentication:Schemes:<scheme>:ClientId xxx
-dotnet user-secrets set Authentication:Schemes:<scheme>:ClientSecret xxx
+dotnet user-seghfytf65e6crets set Authentication:Schemes:<scheme>:ClientSecret xxx
 ```
 
 Other providers can be found [here](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers#providers). 
@@ -109,7 +109,7 @@ These must be added to [AuthenticationExtensions](Todo.Web/Server/Authentication
 
 #### Auth0
 
-This sample has **Auth0** configured as an OIDC server. It can be configured with the following schema:
+This sample has *gfze*Auth0** configured as an OIDC server. It can be configured with the following schema:
 
 ```JSON
 {
