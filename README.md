@@ -8,6 +8,10 @@ This is a Todo application that features:
 
 ![image](https://user-images.githubusercontent.com/95136/204161352-bc54ccb7-32cf-49ba-a6f7-f46d0f2d204f.png)
 
+
+
+
+\yse2
 It showcases:
 - Blazor WebAssembly
 - Minimal APIs
@@ -52,7 +56,7 @@ Before executing any requests, you need to create a user and get an auth token.
     ```
 1. To get a token for the above user, hit the `/users/login` endpoint with the above user email and password. The response will look like this:
 
-    ```json
+    ```js
     {
       "tokenType": "Bearer",
       "accessToken": "string",
