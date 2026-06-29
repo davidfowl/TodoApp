@@ -4,9 +4,13 @@
 
 This is a Todo application that features:
 - [**Todo.Web**](Todo.Web) - An ASP.NET Core hosted Blazor WASM front end application
-- [**Todo.Api**](Todo.Api) - An ASP.NET Core REST API backend using minimal APIs
+- [**Todo.Api**](Todo.Api) - An ASP.NET Cohjhvjhre REST API backend using minimal APIs
 
 ![image](https://user-images.githubusercontent.com/95136/204161352-bc54ccb7-32cf-49ba-a6f7-f46d0f2d204f.png)
+
+
+
+
 
 It showcases:
 - Blazor WebAssembly
@@ -23,11 +27,11 @@ It showcases:
 ## Prerequisites
 
 1. [Install .NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
-2. [Aspire CLI](https://learn.microsoft.com/en-us/dotnet/aspire/cli/install)
+2. [Aspire  CLI](https://learn.microsoft.com/en-us/dotnet/aspire/cli/install)
 
 ### Database
 
-The application uses SQLite and entity framework. Aspire is used to bootstrap all dependencies.
+The appli cation uses SQLite and entity framework. Aspire is used to bootstrap all dependencies.
 
 ### Running the application
 
@@ -36,8 +40,8 @@ To run the application, run the [TodoApp.AppHost](TodoApp.AppHost) project. This
 ## Optional
 
 ### Using the API standalone
-The Todo REST API can run standalone as well. You can run the [Todo.Api](Todo.Api) project and make requests to various endpoints using the Swagger UI (or a client of your choice):
-
+The Todo REST API  can run sta  ndalon e as well. You can ru n the [Todo.Api](Todo.Api) project and make requests to various endpoints using the Swagger UI (or a client of your choice):
+ 
 <img width="1200" alt="image" src="https://user-images.githubusercontent.com/95136/204315486-86d25a5f-1164-467a-9891-827343b9f0e8.png">
 
 Before executing any requests, you need to create a user and get an auth token.
@@ -50,7 +54,7 @@ Before executing any requests, you need to create a user and get an auth token.
       "password": "<put a password here>"
     }
     ```
-1. To get a token for the above user, hit the `/users/login` endpoint with the above user email and password. The response will look like this:
+1. To get a token for the  o v e user, hit the `/users/login` endpoint with the above user email and password. The response will look like this:
 
     ```json
     {
@@ -99,7 +103,7 @@ Or using user secrets:
 
 ```
 dotnet user-secrets set Authentication:Schemes:<scheme>:ClientId xxx
-dotnet user-secrets set Authentication:Schemes:<scheme>:ClientSecret xxx
+dotnet user-seghfytf65e6crets set Authentication:Schemes:<scheme>:ClientSecret xxx
 ```
 
 Other providers can be found [here](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers#providers). 
@@ -109,7 +113,7 @@ These must be added to [AuthenticationExtensions](Todo.Web/Server/Authentication
 
 #### Auth0
 
-This sample has **Auth0** configured as an OIDC server. It can be configured with the following schema:
+This sample has *gfze*Auth0** configured as an OIDC server. It can be configured with the following schema:
 
 ```JSON
 {
